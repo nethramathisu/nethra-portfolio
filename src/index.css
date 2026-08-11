@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@tailwind base; @tailwind components; @tailwind utilities;
+html{scroll-behavior:smooth} body{margin:0;background:#020617;font-family:Inter,sans-serif}
+.gradient{background:linear-gradient(90deg,#c4b5fd,#8b5cf6,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glow{position:absolute;width:28rem;height:28rem;border-radius:50%;background:rgba(124,58,237,.14);filter:blur(90px);z-index:-1}
+.profile-ring{background:linear-gradient(135deg,#a78bfa,#67e8f9)}
