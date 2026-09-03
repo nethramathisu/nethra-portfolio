@@ -1,622 +1,652 @@
 import React, { useState } from "react";
-import {
-  ArrowRight,
-  BriefcaseBusiness,
-  CheckCircle2,
-  Code2,
-  Database,
-  Download,
-  ExternalLink,
-  Github,
-  GraduationCap,
-  Linkedin,
-  Mail,
-  MapPin,
-  Menu,
-  Server,
-  X,
+import
+{
+	ArrowRight,
+	BriefcaseBusiness,
+	CheckCircle2,
+	Code2,
+	Database,
+	Download,
+	ExternalLink,
+	Github,
+	GraduationCap,
+	Linkedin,
+	Mail,
+	MapPin,
+	Menu,
+	Server,
+	X,
 } from "lucide-react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
 const skills = [
-  "React.js",
-  "JavaScript",
-  "TypeScript",
-  "Angular",
-  "Redux Toolkit",
-  "Tailwind CSS",
-  "HTML5",
-  "CSS3",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "Mongoose",
-  "SQL",
-  "REST APIs",
-  "Git",
-  "GitHub",
-  "Vite",
-  "Postman",
+	{
+		category: "Frontend",
+		items: [
+			"React.js",
+			"JavaScript",
+			"TypeScript",
+			"Angular",
+			"Redux Toolkit",
+			"Tailwind CSS",
+			"HTML5",
+			"CSS3",
+		],
+	},
+	{
+		category: "Backend",
+		items: ["Node.js", "Express.js", "REST APIs"],
+	},
+	{
+		category: "Database",
+		items: ["MongoDB", "Mongoose", "SQL"],
+	},
+	{
+		category: "Tools & Technologies",
+		items: ["Git", "GitHub", "Vite", "Postman"],
+	},
 ];
 
 const projects = [
-  {
-    title: "Pet Adoption Platform",
-    type: "MERN Full Stack",
-    description:
-      "A role-based pet adoption platform with authentication, pet listings, adoption workflow, messaging and Cloudinary uploads.",
-    tech: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Cloudinary",
-    ],
-    live: "https://pet-adoption-we.netlify.app",
-    github: "https://github.com/nethramathisu/pet-adoption-frontend",
-  },
- {
-  title: "Expense Tracker",
-  type: "MERN Full Stack",
-  description:
-    "A full-stack expense tracking application with secure authentication, transaction management, category filtering, search and spending summaries.",
-  tech: [
-    "React",
-    "TypeScript",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "JWT",
-  ],
-  live: "https://expensetrackerwebsapp.netlify.app/",
-  github: "https://github.com/nethramathisu/expense-tracker-frontend",
-},
-{
-  title: "Book Management System",
-  type: "MERN Full Stack",
-  description:
-    "A full-stack book management application with authentication, book management, borrowing and returning functionality, and borrowing history.",
-  tech: [
-    "React",
-    "TypeScript",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "JWT",
-  ],
-  live: "https://mernbookmanagement.netlify.app/",
-  github: "https://github.com/nethramathisu/book-management-frontend",
-},
-  {
-    title: "Recipe App",
-    type: "Frontend",
-    description:
-      "A responsive recipe search application focused on a clean and practical user experience.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    live: "https://recipe-app-web-site.netlify.app",
-    github: "https://github.com/nethramathisu/Mini-project-Recipe",
-  },
-  {
-    title: "Kanban Board",
-    type: "Frontend",
-    description:
-      "A task-management application with a drag-and-drop interface for organising work clearly.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    live: "https://kanban-board-web-site.netlify.app",
-    github: "https://github.com/nethramathisu/kanban_board",
-  },
+	{
+		title: "Pet Adoption Platform",
+		type: "MERN Full Stack",
+		description:
+			"A role-based pet adoption platform with authentication, pet listings, adoption workflow, messaging and Cloudinary uploads.",
+		tech: [
+			"React",
+			"TypeScript",
+			"Node.js",
+			"Express",
+			"MongoDB",
+			"Cloudinary",
+		],
+		live: "https://pet-adoption-we.netlify.app",
+		frontendGithub:
+			"https://github.com/nethramathisu/pet-adoption-frontend",
+		backendGithub:
+			"https://github.com/nethramathisu/pet-adoption-backend",
+	},
+	{
+		title: "Expense Tracker",
+		type: "MERN Full Stack",
+		description:
+			"A full-stack expense tracking application with secure authentication, transaction management, category filtering, search and spending summaries.",
+		tech: [
+			"React",
+			"TypeScript",
+			"Node.js",
+			"Express",
+			"MongoDB",
+			"JWT",
+		],
+		live: "https://expensetrackerwebsapp.netlify.app/",
+		frontendGithub:
+			"https://github.com/nethramathisu/expense-tracker-frontend",
+		backendGithub:
+			"https://github.com/nethramathisu/expense-tracker-backend",
+	},
+	{
+		title: "Book Management System",
+		type: "MERN Full Stack",
+		description:
+			"A full-stack book management application with authentication, book management, borrowing and returning functionality, and borrowing history.",
+		tech: [
+			"React",
+			"TypeScript",
+			"Node.js",
+			"Express",
+			"MongoDB",
+			"JWT",
+		],
+		live: "https://mernbookmanagement.netlify.app/",
+		frontendGithub:
+			"https://github.com/nethramathisu/book-management-frontend",
+		backendGithub:
+			"https://github.com/nethramathisu/book-management-backend",
+	},
+	{
+		title: "Recipe App",
+		type: "Frontend",
+		description:
+			"A responsive recipe search application focused on a clean and practical user experience.",
+		tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+		live: "https://recipe-app-web-site.netlify.app",
+		frontendGithub: "https://github.com/nethramathisu/Mini-project-Recipe",
+	},
+	{
+		title: "Kanban Board",
+		type: "Frontend",
+		description:
+			"A task-management application with a drag-and-drop interface for organising work clearly.",
+		tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+		live: "https://kanban-board-web-site.netlify.app",
+		frontendGithub: "https://github.com/nethramathisu/kanban_board",
+	},
 ];
 
-function App() {
-  const [open, setOpen] = useState(false);
+function App()
+{
+	const [open, setOpen] = useState(false);
 
-  return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      {/* HEADER */}
-      <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
-        <div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
-          <a href="#home" className="font-black text-xl">
-            Nethra<span className="text-violet-400">.</span>
-          </a>
+	return (
+		<div className="min-h-screen bg-slate-950 text-slate-100">
+			{/* HEADER */}
+			<header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+				<div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+					<a href="#home" className="font-black text-xl">
+						Nethra<span className="text-violet-400">.</span>
+					</a>
 
-          <nav className="hidden md:flex gap-7 text-sm text-slate-300">
-            {[
-              "About",
-              "Skills",
-              "Projects",
-              "Experience",
-              "Education",
-              "Contact",
-            ].map((x) => (
-              <a
-                href={"#" + x.toLowerCase()}
-                key={x}
-                className="hover:text-white"
-              >
-                {x}
-              </a>
-            ))}
-          </nav>
+					<nav className="hidden md:flex gap-7 text-sm text-slate-300">
+						{[
+							"About",
+							"Skills",
+							"Projects",
+							"Experience",
+							"Education",
+							"Contact",
+						].map((x) => (
+							<a
+								href={"#" + x.toLowerCase()}
+								key={x}
+								className="hover:text-white"
+							>
+								{x}
+							</a>
+						))}
+					</nav>
 
-          <a
-            href="/Nethra-Resume.pdf"
-            download
-            className="hidden md:flex gap-2 items-center bg-white text-slate-950 px-5 py-2.5 rounded-full font-bold text-sm"
-          >
-            <Download size={16} />
-            Resume
-          </a>
+					<a
+						href="/Nethra-Resume.pdf"
+						download
+						className="hidden md:flex gap-2 items-center bg-white text-slate-950 px-5 py-2.5 rounded-full font-bold text-sm"
+					>
+						<Download size={16} />
+						Resume
+					</a>
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden"
-          >
-            {open ? <X /> : <Menu />}
-          </button>
-        </div>
+					<button
+						onClick={() => setOpen(!open)}
+						className="md:hidden"
+					>
+						{open ? <X /> : <Menu />}
+					</button>
+				</div>
 
-        {open && (
-          <nav className="md:hidden border-t border-white/10 px-5 py-3">
-            {[
-              "About",
-              "Skills",
-              "Projects",
-              "Experience",
-              "Education",
-              "Contact",
-            ].map((x) => (
-              <a
-                onClick={() => setOpen(false)}
-                href={"#" + x.toLowerCase()}
-                key={x}
-                className="block py-3 text-slate-300"
-              >
-                {x}
-              </a>
-            ))}
-          </nav>
-        )}
-      </header>
+				{open && (
+					<nav className="md:hidden border-t border-white/10 px-5 py-3">
+						{[
+							"About",
+							"Skills",
+							"Projects",
+							"Experience",
+							"Education",
+							"Contact",
+						].map((x) => (
+							<a
+								onClick={() => setOpen(false)}
+								href={"#" + x.toLowerCase()}
+								key={x}
+								className="block py-3 text-slate-300"
+							>
+								{x}
+							</a>
+						))}
+					</nav>
+				)}
+			</header>
 
-      <main>
-        {/* HOME */}
-        <section id="home" className="relative min-h-screen pt-28">
-          <div className="glow left-[-10rem] top-20" />
+			<main>
+				{/* HOME */}
+				<section id="home" className="relative min-h-screen pt-28">
+					<div className="glow left-[-10rem] top-20" />
 
-          <div className="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-[1.1fr_.9fr] gap-14 items-center">
-            <div>
-              <span className="inline-flex px-4 py-2 rounded-full border border-violet-400/20 bg-violet-400/10 text-violet-200 text-sm">
-                Frontend / MERN Stack Developer
-              </span>
+					<div className="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-[1.1fr_.9fr] gap-14 items-center">
+						<div>
+							<span className="inline-flex px-4 py-2 rounded-full border border-violet-400/20 bg-violet-400/10 text-violet-200 text-sm">
+								Frontend / MERN Stack Developer
+							</span>
 
-              <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
-                Hi, I'm <span className="gradient">Nethra.</span>
-              </h1>
+							<h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
+								Hi, I'm <span className="gradient">Nethra.</span>
+							</h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-400">
-                Frontend Developer with 2 years of industry experience and
-                recent MERN Full Stack training. I build responsive web
-                applications using modern frontend and backend technologies.
-              </p>
+							<p className="mt-7 max-w-2xl text-lg leading-8 text-slate-400">
+								Frontend Developer with 2 years of industry experience and
+								recent MERN Full Stack training. I build responsive web
+								applications using modern frontend and backend technologies.
+							</p>
 
-              <div className="mt-9 flex flex-wrap gap-4">
-                <a
-                  href="#projects"
-                  className="flex items-center gap-2 bg-violet-500 hover:bg-violet-400 px-6 py-3.5 rounded-full font-bold"
-                >
-                  View my projects
-                  <ArrowRight size={18} />
-                </a>
+							<div className="mt-9 flex flex-wrap gap-4">
+								<a
+									href="#projects"
+									className="flex items-center gap-2 bg-violet-500 hover:bg-violet-400 px-6 py-3.5 rounded-full font-bold"
+								>
+									View my projects
+									<ArrowRight size={18} />
+								</a>
 
-                <a
-                  href="/Nethra-Resume.pdf"
-                  download
-                  className="flex items-center gap-2 border border-white/10 px-6 py-3.5 rounded-full font-bold"
-                >
-                  <Download size={18} />
-                  Download resume
-                </a>
-              </div>
+								<a
+									href="/Nethra-Resume.pdf"
+									download
+									className="flex items-center gap-2 border border-white/10 px-6 py-3.5 rounded-full font-bold"
+								>
+									<Download size={18} />
+									Download resume
+								</a>
+							</div>
 
-              <div className="mt-8 flex flex-wrap gap-5 text-sm text-slate-400">
-                <span className="flex gap-2 items-center">
-                  <MapPin size={16} />
-                  Palakkad, Kerala
-                </span>
+							<div className="mt-8 flex flex-wrap gap-5 text-sm text-slate-400">
+								<span className="flex gap-2 items-center">
+									<MapPin size={16} />
+									Palakkad, Kerala
+								</span>
 
-                <a
-                  href="mailto:nethra.gmr@gmail.com"
-                  className="flex gap-2 items-center hover:text-white"
-                >
-                  <Mail size={16} />
-                  nethra.gmr@gmail.com
-                </a>
-              </div>
+								<a
+									href="mailto:nethra.gmr@gmail.com"
+									className="flex gap-2 items-center hover:text-white"
+								>
+									<Mail size={16} />
+									nethra.gmr@gmail.com
+								</a>
+							</div>
 
-              <div className="mt-7 flex gap-4">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.linkedin.com/in/nethra-mathisu-424194199"
-                  className="border border-white/10 rounded-full p-3"
-                >
-                  <Linkedin size={19} />
-                </a>
+							<div className="mt-7 flex gap-4">
+								<a
+									target="_blank"
+									rel="noreferrer"
+									href="https://www.linkedin.com/in/nethra-mathisu-424194199"
+									className="border border-white/10 rounded-full p-3"
+								>
+									<Linkedin size={19} />
+								</a>
 
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://github.com/nethramathisu"
-                  className="border border-white/10 rounded-full p-3"
-                >
-                  <Github size={19} />
-                </a>
-              </div>
-            </div>
+								<a
+									target="_blank"
+									rel="noreferrer"
+									href="https://github.com/nethramathisu"
+									className="border border-white/10 rounded-full p-3"
+								>
+									<Github size={19} />
+								</a>
+							</div>
+						</div>
 
-            <div className="max-w-md w-full mx-auto">
-              <div className="rounded-3xl border border-white/10 bg-white/[.04] p-5 flex items-center gap-5">
-                <div className="profile-ring p-1 rounded-full shrink-0">
-                  <img
-                    src="/nethra-profile.jpeg"
-                    alt="Nethra Mathisu"
-                    className="w-32 h-32 rounded-full object-cover object-top"
-                  />
-                </div>
+						<div className="max-w-md w-full mx-auto">
+							<div className="rounded-3xl border border-white/10 bg-white/[.04] p-5 flex items-center gap-5">
+								<div className="profile-ring p-1 rounded-full shrink-0">
+									<img
+										src="/nethra-profile.jpeg"
+										alt="Nethra Mathisu"
+										className="w-32 h-32 rounded-full object-cover object-top"
+									/>
+								</div>
 
-                <div>
-                  <p className="text-xs uppercase tracking-[.18em] text-violet-300 font-bold">
-                    Hello, I'm Nethra
-                  </p>
+								<div>
+									<p className="text-xs uppercase tracking-[.18em] text-violet-300 font-bold">
+										Hello, I'm Nethra
+									</p>
 
-                  <p className="mt-2 text-sm leading-6 text-slate-400">
-                    Frontend Developer building modern and responsive web
-                    applications.
-                  </p>
-                </div>
-              </div>
+									<p className="mt-2 text-sm leading-6 text-slate-400">
+										Frontend Developer building modern and responsive web
+										applications.
+									</p>
+								</div>
+							</div>
 
-              <div className="mt-6 rounded-3xl border border-white/10 bg-white/[.04] p-6">
-                <p className="text-xs text-slate-500 mb-4">
-                  developer.js
-                </p>
+							<div className="mt-6 rounded-3xl border border-white/10 bg-white/[.04] p-6">
+								<p className="text-xs text-slate-500 mb-4">
+									developer.js
+								</p>
 
-                <pre className="text-sm leading-7 text-slate-300 overflow-auto">
-{`const nethra = {
+								<pre className="text-sm leading-7 text-slate-300 overflow-auto">
+									{`const nethra = {
   role: "Frontend / MERN",
   frontend: ["React","TypeScript","Angular"],
   backend: ["Node.js","Express.js"],
   database: ["MongoDB","SQL"]
 };`}
-                </pre>
-              </div>
-            </div>
-          </div>
-        </section>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</section>
 
-        {/* ABOUT */}
-        <Section id="about" num="01" title="A little about me">
-          <div className="grid lg:grid-cols-[1.3fr_.7fr] gap-6">
-            <Card>
-              <p className="text-lg leading-8 text-slate-300">
-                I'm a Frontend Developer with 2 years of industry experience
-                and recent MERN Full Stack training. My professional experience
-                includes responsive web interfaces, REST API integration, bug
-                fixing and feature enhancement.
-              </p>
+				{/* ABOUT */}
+				<Section id="about" num="01" title="A little about me">
+					<div className="grid lg:grid-cols-[1.3fr_.7fr] gap-6">
+						<Card>
+							<p className="text-lg leading-8 text-slate-300">
+								I'm a Frontend Developer with 2 years of industry experience
+								and recent MERN Full Stack training. My professional experience
+								includes responsive web interfaces, REST API integration, bug
+								fixing and feature enhancement.
+							</p>
 
-              <p className="mt-5 leading-8 text-slate-400">
-                I am currently strengthening my skills in React.js, JavaScript,
-                TypeScript, Redux Toolkit, Tailwind CSS, Node.js, Express.js
-                and MongoDB, with a focus on building practical, responsive web
-                applications.
-              </p>
-            </Card>
+							<p className="mt-5 leading-8 text-slate-400">
+								I am currently strengthening my skills in React.js, JavaScript,
+								TypeScript, Redux Toolkit, Tailwind CSS, Node.js, Express.js
+								and MongoDB, with a focus on building practical, responsive web
+								applications.
+							</p>
+						</Card>
 
-            <div className="grid gap-4">
-              <Mini
-                icon={<Code2 />}
-                title="Frontend"
-                text="React.js, Angular, TypeScript, Tailwind CSS"
-              />
+						<div className="grid gap-4">
+							<Mini
+								icon={<Code2 />}
+								title="Frontend"
+								text="React.js, Angular, TypeScript, Tailwind CSS"
+							/>
 
-              <Mini
-                icon={<Server />}
-                title="Backend"
-                text="Node.js, Express.js & REST APIs"
-              />
+							<Mini
+								icon={<Server />}
+								title="Backend"
+								text="Node.js, Express.js & REST APIs"
+							/>
 
-              <Mini
-                icon={<Database />}
-                title="Database"
-                text="MongoDB, Mongoose & SQL"
-              />
-            </div>
-          </div>
-        </Section>
+							<Mini
+								icon={<Database />}
+								title="Database"
+								text="MongoDB, Mongoose & SQL"
+							/>
+						</div>
+					</div>
+				</Section>
 
-        {/* SKILLS */}
-        <Section id="skills" num="02" title="Technologies I work with">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {skills.map((s) => (
-              <div
-                key={s}
-                className="border border-white/10 bg-slate-900 rounded-2xl px-5 py-4 text-sm font-semibold text-slate-300 hover:border-violet-400/30"
-              >
-                <span className="text-violet-400 mr-3">✦</span>
-                {s}
-              </div>
-            ))}
-          </div>
-        </Section>
+				{/* SKILLS */}
+				{/* SKILLS */}
+				<Section id="skills" num="02" title="Technologies I work with">
+					<div className="grid md:grid-cols-2 gap-6">
+						{skills.map((group) => (
+							<Card key={group.category}>
+								<h3 className="text-lg font-bold text-violet-300">
+									{group.category}
+								</h3>
 
-        {/* PROJECTS */}
-        <Section id="projects" num="03" title="Projects I've built">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p, i) => (
-              <article
-                key={p.title}
-                className={
-                  "rounded-3xl border p-7 flex flex-col " +
-                  (i === 0
-                    ? "border-violet-400/30 bg-violet-500/[.07]"
-                    : "border-white/10 bg-white/[.03]")
-                }
-              >
-                <div className="rounded-xl bg-violet-400/10 p-3 text-violet-300 w-fit">
-                  <Code2 size={21} />
-                </div>
+								<div className="mt-5 flex flex-wrap gap-2">
+									{group.items.map((skill) => (
+										<span
+											key={skill}
+											className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-slate-300"
+										>
+											{skill}
+										</span>
+									))}
+								</div>
+							</Card>
+						))}
+					</div>
+				</Section>
 
-                <p className="mt-6 text-xs uppercase tracking-[.16em] text-slate-500 font-bold">
-                  {p.type}
-                </p>
+				{/* PROJECTS */}
+				<Section id="projects" num="03" title="Projects I've built">
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{projects.map((p, i) => (
+							<article
+								key={p.title}
+								className={
+									"rounded-3xl border p-7 flex flex-col " +
+									(i === 0
+										? "border-violet-400/30 bg-violet-500/[.07]"
+										: "border-white/10 bg-white/[.03]")
+								}
+							>
+								<div className="rounded-xl bg-violet-400/10 p-3 text-violet-300 w-fit">
+									<Code2 size={21} />
+								</div>
 
-                <h3 className="mt-2 text-xl font-bold">
-                  {p.title}
-                </h3>
+								<p className="mt-6 text-xs uppercase tracking-[.16em] text-slate-500 font-bold">
+									{p.type}
+								</p>
 
-                <p className="mt-3 flex-1 text-sm leading-7 text-slate-400">
-                  {p.description}
-                </p>
+								<h3 className="mt-2 text-xl font-bold">
+									{p.title}
+								</h3>
 
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {p.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="bg-white/5 rounded-lg px-2.5 py-1 text-xs text-slate-300"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+								<p className="mt-3 flex-1 text-sm leading-7 text-slate-400">
+									{p.description}
+								</p>
 
-                <div className="mt-7 flex gap-5">
-                  <a
-                    href={p.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex gap-2 items-center text-sm font-semibold hover:text-violet-300"
-                  >
-                    <ExternalLink size={16} />
-                    Live demo
-                  </a>
+								<div className="mt-6 flex flex-wrap gap-2">
+									{p.tech.map((t) => (
+										<span
+											key={t}
+											className="bg-white/5 rounded-lg px-2.5 py-1 text-xs text-slate-300"
+										>
+											{t}
+										</span>
+									))}
+								</div>
 
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex gap-2 items-center text-sm font-semibold hover:text-violet-300"
-                  >
-                    <Github size={16} />
-                    GitHub
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Section>
+								<div className="mt-7 flex flex-wrap gap-4">
+									<a
+										href={p.live}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="flex gap-2 items-center text-sm font-semibold hover:text-violet-300"
+									>
+										<ExternalLink size={16} />
+										Live Demo
+									</a>
 
-        {/* EXPERIENCE */}
-        <Section id="experience" num="04" title="Professional experience">
-          <div className="max-w-4xl border-l border-white/10 pl-8">
-            <div className="relative">
-              <span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
+									{p.frontendGithub && (
+										<a
+											href={p.frontendGithub}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex gap-2 items-center text-sm font-semibold hover:text-violet-300"
+										>
+											<Github size={16} />
+											Frontend
+										</a>
+									)}
 
-              <Card>
-                <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-                  <div>
-                    <h3 className="text-xl font-bold">
-                      Frontend Developer
-                    </h3>
+									{p.backendGithub &&
+										p.backendGithub.startsWith("https://github.com/") && (
+											<a
+												href={p.backendGithub}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="flex gap-2 items-center text-sm font-semibold hover:text-violet-300"
+											>
+												<Github size={16} />
+												Backend
+											</a>
+										)}
+								</div>
+							</article>
+						))}
+					</div>
+				</Section>
 
-                    <p className="mt-1 text-violet-300 font-medium">
-                      RHIBHUS INFOSYSTEM PVT. LTD.
-                    </p>
-                  </div>
+				{/* EXPERIENCE */}
+				<Section id="experience" num="04" title="Professional experience">
+					<div className="max-w-4xl border-l border-white/10 pl-8">
+						<div className="relative">
+							<span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
 
-                  <span className="text-sm text-slate-500">
-                    02/2019 – 01/2021
-                  </span>
-                </div>
+							<Card>
+								<div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+									<div>
+										<h3 className="text-xl font-bold">
+											Frontend Developer
+										</h3>
 
-                <ul className="mt-6 space-y-3">
-                  {[
-                    "Developed responsive web interfaces.",
-                    "Integrated REST APIs.",
-                    "Fixed bugs and enhanced existing features.",
-                    "Collaborated with QA and developers.",
-                  ].map((x) => (
-                    <li
-                      key={x}
-                      className="flex gap-3 text-sm text-slate-400"
-                    >
-                      <CheckCircle2
-                        size={18}
-                        className="text-violet-400 shrink-0"
-                      />
-                      {x}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            </div>
-          </div>
-        </Section>
+										<p className="mt-1 text-violet-300 font-medium">
+											RHIBHUS INFOSYSTEM PVT. LTD.
+										</p>
+									</div>
 
-        {/* EDUCATION */}
-   <Section id="education" num="05" title="Education & certification">
-  <div className="grid md:grid-cols-2 gap-6">
+									<span className="text-sm text-slate-500">
+										02/2019 – 01/2021
+									</span>
+								</div>
 
-    <Card>
-      <GraduationCap className="text-violet-300" />
+								<ul className="mt-6 space-y-3">
+									{[
+										"Developed responsive web interfaces.",
+										"Integrated REST APIs.",
+										"Fixed bugs and enhanced existing features.",
+										"Collaborated with QA and developers.",
+									].map((x) => (
+										<li
+											key={x}
+											className="flex gap-3 text-sm text-slate-400"
+										>
+											<CheckCircle2
+												size={18}
+												className="text-violet-400 shrink-0"
+											/>
+											{x}
+										</li>
+									))}
+								</ul>
+							</Card>
+						</div>
+					</div>
+				</Section>
 
-      <h3 className="mt-5 text-xl font-bold">
-        Master of Computer Applications (MCA)
-      </h3>
+				{/* EDUCATION */}
+				<Section id="education" num="05" title="Education & certification">
+					<div className="grid md:grid-cols-2 gap-6">
 
-      <p className="mt-2 text-slate-400">
-        Kristu Jayanti College · 2018
-      </p>
+						<Card>
+							<GraduationCap className="text-violet-300" />
 
-      <p className="mt-4 text-sm text-slate-500">
-        PG Percentage: 76.94%
-      </p>
-    </Card>
+							<h3 className="mt-5 text-xl font-bold">
+								Master of Computer Applications (MCA)
+							</h3>
 
-    <Card>
-      <BriefcaseBusiness className="text-violet-300" />
+							<p className="mt-2 text-slate-400">
+								Kristu Jayanti College · 2018
+							</p>
 
-      <h3 className="mt-5 text-xl font-bold">
-        GUVI Full Stack Development
-      </h3>
+							<p className="mt-4 text-sm text-slate-500">
+								PG Percentage: 76.94%
+							</p>
+						</Card>
 
-      <p className="mt-2 text-slate-400">
-        MERN · 2026
-      </p>
+						<Card>
+							<BriefcaseBusiness className="text-violet-300" />
 
-      <a
-        href="https://www.zenclass.in/certificateDownload/8m8WsXntFQEIWamK"
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-violet-300 hover:text-violet-200"
-      >
-        <ExternalLink size={16} />
-        View Certificate
-      </a>
-    </Card>
+							<h3 className="mt-5 text-xl font-bold">
+								GUVI Full Stack Development
+							</h3>
 
-  </div>
+							<p className="mt-2 text-slate-400">
+								MERN · 2026
+							</p>
 
-  <div className="grid sm:grid-cols-3 gap-4 mt-6">
-    {[
-      ["10th", "60.48%"],
-      ["12th", "77.33%"],
-      ["UG", "73.48%"],
-    ].map(([a, b]) => (
-      <div
-        key={a}
-        className="border border-white/10 bg-slate-900 rounded-2xl p-5"
-      >
-        <p className="text-sm text-slate-500">{a}</p>
-        <p className="mt-1 text-xl font-black">{b}</p>
-      </div>
-    ))}
-  </div>
-</Section>
+							<a
+								href="https://www.zenclass.in/certificateDownload/8m8WsXntFQEIWamK"
+								target="_blank"
+								rel="noreferrer"
+								className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-violet-300 hover:text-violet-200"
+							>
+								<ExternalLink size={16} />
+								View Certificate
+							</a>
+						</Card>
 
-        {/* CONTACT */}
-        <Section id="contact" num="06" title="Let's connect">
-          <Card>
-            <h3 className="text-2xl font-black">
-              Looking for a new opportunity?
-            </h3>
+					</div>
+				</Section>
 
-            <p className="mt-4 max-w-2xl leading-7 text-slate-400">
-              I'm open to opportunities where I can use my frontend experience
-              and continue growing as a full-stack developer.
-            </p>
+				{/* CONTACT */}
+				<Section id="contact" num="06" title="Let's connect">
+					<Card>
+						<h3 className="text-2xl font-black">
+							Looking for a new opportunity?
+						</h3>
 
-            <div className="mt-8 flex flex-wrap gap-5">
-              <a
-                href="mailto:nethra.gmr@gmail.com"
-                className="flex gap-2 items-center text-slate-300 hover:text-white"
-              >
-                <Mail size={18} className="text-violet-300" />
-                nethra.gmr@gmail.com
-              </a>
+						<p className="mt-4 max-w-2xl leading-7 text-slate-400">
+							I'm open to opportunities where I can use my frontend experience
+							and continue growing as a full-stack developer.
+						</p>
 
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.linkedin.com/in/nethra-mathisu-424194199"
-                className="flex gap-2 items-center text-slate-300 hover:text-white"
-              >
-                <Linkedin size={18} className="text-violet-300" />
-                LinkedIn
-              </a>
+						<div className="mt-8 flex flex-wrap gap-5">
+							<a
+								href="mailto:nethra.gmr@gmail.com"
+								className="flex gap-2 items-center text-slate-300 hover:text-white"
+							>
+								<Mail size={18} className="text-violet-300" />
+								nethra.gmr@gmail.com
+							</a>
 
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/nethramathisu"
-                className="flex gap-2 items-center text-slate-300 hover:text-white"
-              >
-                <Github size={18} className="text-violet-300" />
-                GitHub
-              </a>
-            </div>
-          </Card>
-        </Section>
-      </main>
+							<a
+								target="_blank"
+								rel="noreferrer"
+								href="https://www.linkedin.com/in/nethra-mathisu-424194199"
+								className="flex gap-2 items-center text-slate-300 hover:text-white"
+							>
+								<Linkedin size={18} className="text-violet-300" />
+								LinkedIn
+							</a>
 
-      {/* FOOTER */}
-      <footer className="border-t border-white/10 py-8 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} Nethra Mathisu · Built with React & Tailwind CSS
-      </footer>
-    </div>
-  );
+							<a
+								target="_blank"
+								rel="noreferrer"
+								href="https://github.com/nethramathisu"
+								className="flex gap-2 items-center text-slate-300 hover:text-white"
+							>
+								<Github size={18} className="text-violet-300" />
+								GitHub
+							</a>
+						</div>
+					</Card>
+				</Section>
+			</main>
+
+			{/* FOOTER */}
+			<footer className="border-t border-white/10 py-8 text-center text-sm text-slate-500">
+				© {new Date().getFullYear()} Nethra Mathisu · Built with React & Tailwind CSS
+			</footer>
+		</div>
+	);
 }
 
-function Section({ id, num, title, children }) {
-  return (
-    <section id={id} className="py-24 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-5">
-        <p className="text-xs uppercase tracking-[.22em] font-bold text-violet-300">
-          {num} — {title}
-        </p>
+function Section({ id, num, title, children })
+{
+	return (
+		<section id={id} className="py-24 border-t border-white/10">
+			<div className="max-w-6xl mx-auto px-5">
+				<p className="text-xs uppercase tracking-[.22em] font-bold text-violet-300">
+					{num} — {title}
+				</p>
 
-        <h2 className="mt-3 mb-12 text-3xl sm:text-4xl font-black">
-          {title}
-        </h2>
+				<h2 className="mt-3 mb-12 text-3xl sm:text-4xl font-black">
+					{title}
+				</h2>
 
-        {children}
-      </div>
-    </section>
-  );
+				{children}
+			</div>
+		</section>
+	);
 }
 
-function Card({ children }) {
-  return (
-    <div className="rounded-3xl border border-white/10 bg-white/[.03] p-7">
-      {children}
-    </div>
-  );
+function Card({ children })
+{
+	return (
+		<div className="rounded-3xl border border-white/10 bg-white/[.03] p-7">
+			{children}
+		</div>
+	);
 }
 
-function Mini({ icon, title, text }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-slate-900 p-5">
-      {icon}
+function Mini({ icon, title, text })
+{
+	return (
+		<div className="rounded-2xl border border-white/10 bg-slate-900 p-5">
+			{icon}
 
-      <h3 className="mt-3 font-bold">{title}</h3>
+			<h3 className="mt-3 font-bold">{title}</h3>
 
-      <p className="mt-1 text-sm leading-6 text-slate-400">
-        {text}
-      </p>
-    </div>
-  );
+			<p className="mt-1 text-sm leading-6 text-slate-400">
+				{text}
+			</p>
+		</div>
+	);
 }
 
 createRoot(document.getElementById("root")).render(<App />);
