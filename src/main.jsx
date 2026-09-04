@@ -133,7 +133,9 @@ function App()
 	{
 		e.preventDefault();
 
-		const form = e.target;
+		const form = e.currentTarget;
+
+		const formData = new FormData(form);
 
 		try
 		{
@@ -142,7 +144,7 @@ function App()
 				headers: {
 					"Content-Type": "application/x-www-form-urlencoded",
 				},
-				body: new URLSearchParams(new FormData(form)).toString(),
+				body: new URLSearchParams(formData).toString(),
 			});
 
 			if (response.ok)
@@ -155,6 +157,7 @@ function App()
 			}
 		} catch (error)
 		{
+			console.error("Form submission error:", error);
 			alert("Unable to send your message. Please try again.");
 		}
 	};
