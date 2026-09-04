@@ -462,51 +462,101 @@ function App()
 				</Section>
 
 				{/* EXPERIENCE */}
-				<Section id="experience" num="04" title="Professional experience">
-					<div className="max-w-4xl border-l border-white/10 pl-8">
-						<div className="relative">
-							<span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
+				```jsx
+{/* EXPERIENCE */}
+<Section id="experience" num="04" title="Professional experience">
+    <div className="max-w-4xl border-l border-white/10 pl-8">
 
-							<Card>
-								<div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-									<div>
-										<h3 className="text-xl font-bold">
-											Frontend Developer
-										</h3>
+        {/* Intact Green Services */}
+        <div className="relative">
+            <span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
 
-										<p className="mt-1 text-violet-300 font-medium">
-											RHIBHUS INFOSYSTEM PVT. LTD.
-										</p>
-									</div>
+            <Card>
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+                    <div>
+                        <h3 className="text-xl font-bold">
+                            Front End Developer
+                        </h3>
+                        <p className="mt-1 text-violet-300 font-medium">
+                            INTACT GREEN SERVICES PVT. LTD.
+                        </p>
+                        <p className="mt-1 text-sm text-slate-500">
+                            Bengaluru
+                        </p>
+                    </div>
 
-									<span className="text-sm text-slate-500">
-										02/2019 – 01/2021
-									</span>
-								</div>
+                    <span className="text-sm text-slate-500">
+                        Mar 2019 – Feb 2020
+                    </span>
+                </div>
 
-								<ul className="mt-6 space-y-3">
-									{[
-										"Developed responsive web interfaces.",
-										"Integrated REST APIs.",
-										"Fixed bugs and enhanced existing features.",
-										"Collaborated with QA and developers.",
-									].map((x) => (
-										<li
-											key={x}
-											className="flex gap-3 text-sm text-slate-400"
-										>
-											<CheckCircle2
-												size={18}
-												className="text-violet-400 shrink-0"
-											/>
-											{x}
-										</li>
-									))}
-								</ul>
-							</Card>
-						</div>
-					</div>
-				</Section>
+                <ul className="mt-6 space-y-3">
+                    {[
+                        "Crafted intuitive and reusable UI elements with HTML, CSS, and Angular, facilitating a 30% faster integration of new product features into the existing application.",
+                        "Integrated REST APIs, implemented dynamic data rendering, and resolved UI defects with development and QA teams.",
+                    ].map((x) => (
+                        <li
+                            key={x}
+                            className="flex gap-3 text-sm text-slate-400"
+                        >
+                            <CheckCircle2
+                                size={18}
+                                className="text-violet-400 shrink-0"
+                            />
+                            {x}
+                        </li>
+                    ))}
+                </ul>
+            </Card>
+        </div>
+
+        {/* Rhibhus Infosystem */}
+        <div className="relative mt-10">
+            <span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
+
+            <Card>
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+                    <div>
+                        <h3 className="text-xl font-bold">
+                            Frontend Developer
+                        </h3>
+                        <p className="mt-1 text-violet-300 font-medium">
+                            RHIBHUS INFOSYSTEM PVT. LTD.
+                        </p>
+                        <p className="mt-1 text-sm text-slate-500">
+                            Bengaluru
+                        </p>
+                    </div>
+
+                    <span className="text-sm text-slate-500">
+                        Mar 2020 – Jan 2021
+                    </span>
+                </div>
+
+                <ul className="mt-6 space-y-3">
+                    {[
+                        "Developed and maintained responsive Angular interfaces with backend API integration and dynamic components.",
+                        "Enhanced features, fixed application issues, and collaborated with cross-functional teams to improve usability and performance.",
+                    ].map((x) => (
+                        <li
+                            key={x}
+                            className="flex gap-3 text-sm text-slate-400"
+                        >
+                            <CheckCircle2
+                                size={18}
+                                className="text-violet-400 shrink-0"
+                            />
+                            {x}
+                        </li>
+                    ))}
+                </ul>
+            </Card>
+        </div>
+
+    </div>
+</Section>
+```
+
 
 				{/* EDUCATION */}
 				<Section id="education" num="05" title="Education & certification">
