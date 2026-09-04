@@ -129,7 +129,35 @@ const projects = [
 function App()
 {
 	const [open, setOpen] = useState(false);
+	const handleSubmit = async (e) =>
+	{
+		e.preventDefault();
 
+		const form = e.target;
+
+		try
+		{
+			const response = await fetch("/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
+				body: new URLSearchParams(new FormData(form)).toString(),
+			});
+
+			if (response.ok)
+			{
+				alert("Thank you! Your message has been sent successfully.");
+				form.reset();
+			} else
+			{
+				alert("Something went wrong. Please try again.");
+			}
+		} catch (error)
+		{
+			alert("Unable to send your message. Please try again.");
+		}
+	};
 	return (
 		<div className="min-h-screen bg-slate-950 text-slate-100">
 			{/* HEADER */}
@@ -673,6 +701,7 @@ function App()
 									name="contact"
 									method="POST"
 									data-netlify="true"
+									onSubmit={handleSubmit}
 									className="mt-7 space-y-5"
 								>
 									<input
