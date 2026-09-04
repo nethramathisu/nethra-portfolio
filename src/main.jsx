@@ -463,99 +463,99 @@ function App()
 
 				{/* EXPERIENCE */}
 				```jsx
-{/* EXPERIENCE */}
-<Section id="experience" num="04" title="Professional experience">
-    <div className="max-w-4xl border-l border-white/10 pl-8">
+				{/* EXPERIENCE */}
+				<Section id="experience" num="04" title="Professional experience">
+					<div className="max-w-4xl border-l border-white/10 pl-8">
 
-        {/* Intact Green Services */}
-        <div className="relative">
-            <span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
+						{/* Intact Green Services */}
+						<div className="relative">
+							<span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
 
-            <Card>
-                <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-                    <div>
-                        <h3 className="text-xl font-bold">
-                            Front End Developer
-                        </h3>
-                        <p className="mt-1 text-violet-300 font-medium">
-                            INTACT GREEN SERVICES PVT. LTD.
-                        </p>
-                        <p className="mt-1 text-sm text-slate-500">
-                            Bengaluru
-                        </p>
-                    </div>
+							<Card>
+								<div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+									<div>
+										<h3 className="text-xl font-bold">
+											Front End Developer
+										</h3>
+										<p className="mt-1 text-violet-300 font-medium">
+											INTACT GREEN SERVICES PVT. LTD.
+										</p>
+										<p className="mt-1 text-sm text-slate-500">
+											Bengaluru
+										</p>
+									</div>
 
-                    <span className="text-sm text-slate-500">
-                        Mar 2019 – Feb 2020
-                    </span>
-                </div>
+									<span className="text-sm text-slate-500">
+										Mar 2019 – Feb 2020
+									</span>
+								</div>
 
-                <ul className="mt-6 space-y-3">
-                    {[
-                        "Crafted intuitive and reusable UI elements with HTML, CSS, and Angular, facilitating a 30% faster integration of new product features into the existing application.",
-                        "Integrated REST APIs, implemented dynamic data rendering, and resolved UI defects with development and QA teams.",
-                    ].map((x) => (
-                        <li
-                            key={x}
-                            className="flex gap-3 text-sm text-slate-400"
-                        >
-                            <CheckCircle2
-                                size={18}
-                                className="text-violet-400 shrink-0"
-                            />
-                            {x}
-                        </li>
-                    ))}
-                </ul>
-            </Card>
-        </div>
+								<ul className="mt-6 space-y-3">
+									{[
+										"Crafted intuitive and reusable UI elements with HTML, CSS, and Angular, facilitating a 30% faster integration of new product features into the existing application.",
+										"Integrated REST APIs, implemented dynamic data rendering, and resolved UI defects with development and QA teams.",
+									].map((x) => (
+										<li
+											key={x}
+											className="flex gap-3 text-sm text-slate-400"
+										>
+											<CheckCircle2
+												size={18}
+												className="text-violet-400 shrink-0"
+											/>
+											{x}
+										</li>
+									))}
+								</ul>
+							</Card>
+						</div>
 
-        {/* Rhibhus Infosystem */}
-        <div className="relative mt-10">
-            <span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
+						{/* Rhibhus Infosystem */}
+						<div className="relative mt-10">
+							<span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full border-4 border-slate-950 bg-violet-400" />
 
-            <Card>
-                <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-                    <div>
-                        <h3 className="text-xl font-bold">
-                            Frontend Developer
-                        </h3>
-                        <p className="mt-1 text-violet-300 font-medium">
-                            RHIBHUS INFOSYSTEM PVT. LTD.
-                        </p>
-                        <p className="mt-1 text-sm text-slate-500">
-                            Bengaluru
-                        </p>
-                    </div>
+							<Card>
+								<div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+									<div>
+										<h3 className="text-xl font-bold">
+											Frontend Developer
+										</h3>
+										<p className="mt-1 text-violet-300 font-medium">
+											RHIBHUS INFOSYSTEM PVT. LTD.
+										</p>
+										<p className="mt-1 text-sm text-slate-500">
+											Bengaluru
+										</p>
+									</div>
 
-                    <span className="text-sm text-slate-500">
-                        Mar 2020 – Jan 2021
-                    </span>
-                </div>
+									<span className="text-sm text-slate-500">
+										Mar 2020 – Jan 2021
+									</span>
+								</div>
 
-                <ul className="mt-6 space-y-3">
-                    {[
-                        "Developed and maintained responsive Angular interfaces with backend API integration and dynamic components.",
-                        "Enhanced features, fixed application issues, and collaborated with cross-functional teams to improve usability and performance.",
-                    ].map((x) => (
-                        <li
-                            key={x}
-                            className="flex gap-3 text-sm text-slate-400"
-                        >
-                            <CheckCircle2
-                                size={18}
-                                className="text-violet-400 shrink-0"
-                            />
-                            {x}
-                        </li>
-                    ))}
-                </ul>
-            </Card>
-        </div>
+								<ul className="mt-6 space-y-3">
+									{[
+										"Developed and maintained responsive Angular interfaces with backend API integration and dynamic components.",
+										"Enhanced features, fixed application issues, and collaborated with cross-functional teams to improve usability and performance.",
+									].map((x) => (
+										<li
+											key={x}
+											className="flex gap-3 text-sm text-slate-400"
+										>
+											<CheckCircle2
+												size={18}
+												className="text-violet-400 shrink-0"
+											/>
+											{x}
+										</li>
+									))}
+								</ul>
+							</Card>
+						</div>
 
-    </div>
-</Section>
-```
+					</div>
+				</Section>
+				```
 
 
 				{/* EDUCATION */}
@@ -604,48 +604,150 @@ function App()
 				</Section>
 
 				{/* CONTACT */}
+				{/* CONTACT */}
+
 				<Section id="contact" num="06" title="Let's connect">
-					<Card>
-						<h3 className="text-2xl font-black">
-							Looking for a new opportunity?
-						</h3>
+					<div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
 
-						<p className="mt-4 max-w-2xl leading-7 text-slate-400">
-							I'm open to opportunities where I can use my frontend experience
-							and continue growing as a full-stack developer.
-						</p>
+						{/* Contact Information */}
+						<div className="lg:order-1">
+							<Card>
+								<h3 className="text-2xl font-black">
+									Looking for a new opportunity?
+								</h3>
 
-						<div className="mt-8 flex flex-wrap gap-5">
-							<a
-								href="mailto:nethra.gmr@gmail.com"
-								className="flex gap-2 items-center text-slate-300 hover:text-white"
-							>
-								<Mail size={18} className="text-violet-300" />
-								nethra.gmr@gmail.com
-							</a>
+								<p className="mt-4 leading-7 text-slate-400">
+									I'm open to opportunities where I can use my frontend experience
+									and continue growing as a full-stack developer.
+								</p>
 
-							<a
-								target="_blank"
-								rel="noreferrer"
-								href="https://www.linkedin.com/in/nethra-mathisu-424194199"
-								className="flex gap-2 items-center text-slate-300 hover:text-white"
-							>
-								<Linkedin size={18} className="text-violet-300" />
-								LinkedIn
-							</a>
+								<div className="mt-8 space-y-5">
+									<a
+										href="mailto:nethra.gmr@gmail.com"
+										className="flex items-center gap-3 text-slate-300 hover:text-white"
+									>
+										<Mail size={18} className="text-violet-300" />
+										nethra.gmr@gmail.com
+									</a>
 
-							<a
-								target="_blank"
-								rel="noreferrer"
-								href="https://github.com/nethramathisu"
-								className="flex gap-2 items-center text-slate-300 hover:text-white"
-							>
-								<Github size={18} className="text-violet-300" />
-								GitHub
-							</a>
+									<a
+										href="https://www.linkedin.com/in/nethra-mathisu-424194199"
+										target="_blank"
+										rel="noreferrer"
+										className="flex items-center gap-3 text-slate-300 hover:text-white"
+									>
+										<Linkedin size={18} className="text-violet-300" />
+										LinkedIn
+									</a>
+
+									<a
+										href="https://github.com/nethramathisu"
+										target="_blank"
+										rel="noreferrer"
+										className="flex items-center gap-3 text-slate-300 hover:text-white"
+									>
+										<Github size={18} className="text-violet-300" />
+										GitHub
+									</a>
+
+									<div className="flex items-center gap-3 text-slate-300">
+										<MapPin size={18} className="text-violet-300" />
+										Palakkad, Kerala
+									</div>
+								</div>
+							</Card>
 						</div>
-					</Card>
+
+						{/* Contact Form */}
+						<div className="lg:order-2">
+							<Card>
+								<h3 className="text-2xl font-black">
+									Send me a message
+								</h3>
+
+								<p className="mt-2 text-sm leading-6 text-slate-400">
+									Have an opportunity or a project in mind? Feel free to reach out.
+								</p>
+
+								<form
+									name="contact"
+									method="POST"
+									data-netlify="true"
+									className="mt-7 space-y-5"
+								>
+									<input
+										type="hidden"
+										name="form-name"
+										value="contact"
+									/>
+
+									<div>
+										<label
+											htmlFor="name"
+											className="mb-2 block text-sm font-medium text-slate-200"
+										>
+											Name
+										</label>
+
+										<input
+											id="name"
+											type="text"
+											name="name"
+											required
+											placeholder="Your name"
+											className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-violet-400"
+										/>
+									</div>
+
+									<div>
+										<label
+											htmlFor="email"
+											className="mb-2 block text-sm font-medium text-slate-200"
+										>
+											Email
+										</label>
+
+										<input
+											id="email"
+											type="email"
+											name="email"
+											required
+											placeholder="your@email.com"
+											className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-violet-400"
+										/>
+									</div>
+
+									<div>
+										<label
+											htmlFor="message"
+											className="mb-2 block text-sm font-medium text-slate-200"
+										>
+											Message
+										</label>
+
+										<textarea
+											id="message"
+											name="message"
+											required
+											rows="5"
+											placeholder="Write your message..."
+											className="w-full resize-none rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-violet-400"
+										/>
+									</div>
+
+									<button
+										type="submit"
+										className="w-full rounded-xl bg-violet-500 px-6 py-3 font-semibold text-white transition hover:bg-violet-400"
+									>
+										Send Message
+									</button>
+								</form>
+							</Card>
+						</div>
+
+					</div>
 				</Section>
+
 			</main>
 
 			{/* FOOTER */}
