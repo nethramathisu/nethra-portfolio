@@ -137,15 +137,34 @@ function App()
 
 		const formData = new FormData(form);
 
+		const data = {
+			name: formData.get("name"),
+			email: formData.get("email"),
+			message: formData.get("message"),
+		};
+
 		try
 		{
-			const response = await fetch("/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-				},
-				body: new URLSearchParams(formData).toString(),
-			});
+			// const response = await fetch("http://localhost:5000/api/contact", {
+			// 	method: "POST",
+			// 	headers: {
+			// 		"Content-Type": "application/json",
+			// 	},
+			// 	body: JSON.stringify(data),
+			// });
+
+			const response = await fetch(
+				"https://portfolio-backend-a3le.onrender.com/api/contact",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(data),
+				}
+			);
+
+			const result = await response.json();
 
 			if (response.ok)
 			{
@@ -153,7 +172,7 @@ function App()
 				form.reset();
 			} else
 			{
-				alert("Something went wrong. Please try again.");
+				alert(result.message || "Something went wrong.");
 			}
 		} catch (error)
 		{
@@ -701,17 +720,10 @@ function App()
 								</p>
 
 								<form
-									name="contact"
-									method="POST"
-									data-netlify="true"
 									onSubmit={handleSubmit}
 									className="mt-7 space-y-5"
 								>
-									<input
-										type="hidden"
-										name="form-name"
-										value="contact"
-									/>
+
 
 									<div>
 										<label
