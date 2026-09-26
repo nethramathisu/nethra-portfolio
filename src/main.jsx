@@ -512,7 +512,7 @@ function App()
 				</Section>
 
 				{/* EXPERIENCE */}
-				```jsx
+				
 				{/* EXPERIENCE */}
 				<Section id="experience" num="04" title="Professional experience">
 					<div className="max-w-4xl border-l border-white/10 pl-8">
@@ -605,7 +605,7 @@ function App()
 
 					</div>
 				</Section>
-				```
+				
 
 
 				{/* EDUCATION */}
